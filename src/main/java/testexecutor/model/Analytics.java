@@ -15,9 +15,10 @@ public class Analytics {
     @ManyToOne
     @JoinColumn(name = "examiner_id")
     private User examiner;
+    @ManyToOne
+    @JoinColumn(name = "analytics_id") // Adjust the column name as per your schema
+    private Analytics analytics;
 
-    @OneToMany(mappedBy = "analytics", cascade = CascadeType.ALL)
-    private List<Result> resultsAnalyzed;
 
     // Constructors
     public Analytics() {}
